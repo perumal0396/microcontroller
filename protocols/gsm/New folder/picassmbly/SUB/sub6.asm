@@ -1,0 +1,6 @@
+#include<p16f877a.inc>
+ORG 00H
+MOVLW b'11111110
+SUBLW b'00000001
+NOP
+END

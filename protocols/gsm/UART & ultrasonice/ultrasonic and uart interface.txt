@@ -1,0 +1,184 @@
+			PIC16F877a INTERFACE WITH UART AND ULTRASONIC SENSOR CONFIGURATION
+
+
+
+
+		/************************************************************/
+		/*    NAME           : PERUMAL  R                           */
+		/*		                                            */
+		/*    DATE	     : 	                                    */
+		/*                                                          */
+		/*   DESCRIPTION    : Interface with uart and ultrasonice   */
+		/*                     sensor with lcd                      */
+		/************************************************************/
+
+
+
+
+ DESCRIPTION
+--------------	
+
+
+	Here Iam Using PIC16F877A Microcontroller :
+	
+	First I am Communicate with Uart Protocols : Uart full form of Universal asynchronous Reciver/Transmiter
+	Becase you need a Transmiter / Reciver  But not a communication protocols like SPI,I2c...etc Than Uart is a serial communication 
+	protocols
+		
+	we here you using a Asynchronous - Tere is no clock signal and synchronous - This for clock signal
+			
+	Asynchronous(full duplex )
+	synchronous(master-half duplex)
+	synchronous(slave-half duplex)
+`
+	UART->configureation mode 
+	--------------------------
+	Register used for serial communication 
+
+	->TXSTA(Transmit status and control register)
+	->RCSTA(Recive status and control register)
+	->SPBRG(UART Baud Rate Generator)
+	->TXREG(Uart Transmit Register)
+	->RCREG(Uart Reciver Register)
+	  
+	SPBRG=Baud rate Generators
+		fosc=20MHZ
+		9600=20x10^6/(64(x+1))
+		      20x10^6
+	       (x+1)=  --------  = 32.5
+		      (64x9600)
+	->TXSTA(Transmit status and control register)
+	
+	TX9:bit Transmit Enable bit
+	1=select 9bit transmission
+	0=select 8bit transmission
+
+	TXEN:Transmit Enable bit
+	1=Transmit Enable
+	0=Transmit disable
+
+	SYNC:UART mode Select bit
+	1=Synchronous mode
+	0=asynchronous mode
+
+	BRGH:HiGH baud rate select bit
+	Asynchronous mode
+	1=High speed 
+	0=low  speed
+
+	SPEN:serial port enable bit
+	1=select port enable (configure RC7/RX and RC6/TX/Ck pin)
+	0=select port disable
+
+	SPBRG->Baud rate generator
+	
+	TXIF=0;->Transmit flag bit
+	RXIF=0;->Reciver flag  bit
+	
+	RCREG ->Uart Reciver Register
+
+
+	TIMER1->moudels |
+        ----------------- 
+		 
+		why need Timer means you need a dealy function so you have a seconds and milsecond calculation
+		it have there timer but i am using timer1 calculation here
+		types:
+			->Timer0 (8 bit timer)
+			->Timer1 (16 bit timer)
+			->Timer2 (8 bit timer) 
+
+
+        	TMR1->calculation
+		-------------------
+		
+			    4
+		      T = ------ * prescaler *(65536 -Timer1)
+                            f 
+
+		               4   
+		     1/10  = ------- *8*(65535-Timer1)
+			     20x10^6       
+
+	
+	TIMER1- configuration mode
+	
+	T1CON-Timer1 control register(address 10h)
+	------------------------------------------	
+	
+	T1CKPS1 : T1CKPS0  -->Timer prescaler select bit
+	1 1 = 1 : 8 prescaler values
+	
+	T1OSCEN  : Timer1 oscillator Enable bits
+	1  = oscillator Enable 
+	0  = oscillator shut-off
+
+	TMR1CS  :  Timer1 clock source bit
+	1  = External clock
+	0  = internal clock(Fosc /4 )
+	
+	TMR1ON : Timer1 on bit
+	1  = Enable timer1
+	0  = stop timer1
+	
+	
+	TMR1H->high | readable and writeable TMR1 register 
+	TMR1L->Low  |  
+
+ 	TMR1IF=0; timer flag bit  
+          
+
+	Lcd->(	Liquid crystal Display)
+       ---------------------------------- 
+
+	Rs  -> Register / selected 
+
+	Rw  -> Readable /  writeable 
+	
+ 	EN  -> Enable bit 	
+
+	vss  -> Ground pin
+	
+	VDD  -> power supply
+
+	Lcd_init()---->lcd initialization 
+	
+	void lcd_cmd (unsigned char cmd)---->lcd transmiter
+	
+	void lcd_data(unsigned char data)---->lcd reciver
+	
+	Utrasonic sensor working :
+	--------------------------
+			Ultrasonic sensor it sonar and determinte the distance and object detected it distance 2cm to 400 cm
+	distance or 1 to 13 feet it operation 
+
+	Ultrasonic sensor-HC-SR04->pins:
+	-----------------------
+		VCC       =   power supply
+		VDD	  =   GROUND PIN
+		TRIGER    =   INPUT PIN
+		ECHO      =   OUTPUT PIN
+
+	Distance calculation:
+	-----------------------	
+	After stopping the Timer1 modules will have the number(Ticks) stroed
+	(TMR1)->register
+	
+	Duration of each Tick=4/FOSC=[1 mescond]
+	sound Travelled for TMR1 * 10^-6
+			   --------------
+				2
+	sound Travelling speed in Air = 340m/s
+				        
+			Distance
+		speed= ---------
+			Time
+	Distance = TIME * SPEED
+		
+		TMR1 * 10^-6 * 3400
+	     = ----------------------
+			2
+		
+		TMR1
+	    =  --------  cm
+		58.823

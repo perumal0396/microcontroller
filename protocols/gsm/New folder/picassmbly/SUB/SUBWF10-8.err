@@ -1,0 +1,13 @@
+Warning[205] C:\USERS\PERUMAL_PICHAAA!!!!!\DESKTOP\PICASSMBLY\SUB\SUBWF10-8.ASM 2 : Found directive in column 1. (ORG)
+Warning[203] C:\USERS\PERUMAL_PICHAAA!!!!!\DESKTOP\PICASSMBLY\SUB\SUBWF10-8.ASM 3 : Found opcode in column 1. (BCF)
+Warning[203] C:\USERS\PERUMAL_PICHAAA!!!!!\DESKTOP\PICASSMBLY\SUB\SUBWF10-8.ASM 4 : Found opcode in column 1. (BSF)
+Warning[203] C:\USERS\PERUMAL_PICHAAA!!!!!\DESKTOP\PICASSMBLY\SUB\SUBWF10-8.ASM 5 : Found opcode in column 1. (MOVLW)
+Warning[209] C:\USERS\PERUMAL_PICHAAA!!!!!\DESKTOP\PICASSMBLY\SUB\SUBWF10-8.ASM 5 : Missing quote
+Warning[203] C:\USERS\PERUMAL_PICHAAA!!!!!\DESKTOP\PICASSMBLY\SUB\SUBWF10-8.ASM 6 : Found opcode in column 1. (MOVWF)
+Message[302] C:\USERS\PERUMAL_PICHAAA!!!!!\DESKTOP\PICASSMBLY\SUB\SUBWF10-8.ASM 6 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Warning[203] C:\USERS\PERUMAL_PICHAAA!!!!!\DESKTOP\PICASSMBLY\SUB\SUBWF10-8.ASM 7 : Found opcode in column 1. (MOVLW)
+Warning[209] C:\USERS\PERUMAL_PICHAAA!!!!!\DESKTOP\PICASSMBLY\SUB\SUBWF10-8.ASM 7 : Missing quote
+Warning[203] C:\USERS\PERUMAL_PICHAAA!!!!!\DESKTOP\PICASSMBLY\SUB\SUBWF10-8.ASM 8 : Found opcode in column 1. (SUBWF)
+Message[302] C:\USERS\PERUMAL_PICHAAA!!!!!\DESKTOP\PICASSMBLY\SUB\SUBWF10-8.ASM 8 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Warning[203] C:\USERS\PERUMAL_PICHAAA!!!!!\DESKTOP\PICASSMBLY\SUB\SUBWF10-8.ASM 9 : Found opcode in column 1. (NOP)
+Warning[205] C:\USERS\PERUMAL_PICHAAA!!!!!\DESKTOP\PICASSMBLY\SUB\SUBWF10-8.ASM 10 : Found directive in column 1. (END)

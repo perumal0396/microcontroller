@@ -1,0 +1,6 @@
+Warning[205] C:\USERS\PERUMAL_PICHAAA!!!!!\DESKTOP\PICASSMBLY\NOP\NOP.ASM 2 : Found directive in column 1. (ORG)
+Warning[203] C:\USERS\PERUMAL_PICHAAA!!!!!\DESKTOP\PICASSMBLY\NOP\NOP.ASM 3 : Found opcode in column 1. (MOVLW)
+Warning[209] C:\USERS\PERUMAL_PICHAAA!!!!!\DESKTOP\PICASSMBLY\NOP\NOP.ASM 3 : Missing quote
+Warning[203] C:\USERS\PERUMAL_PICHAAA!!!!!\DESKTOP\PICASSMBLY\NOP\NOP.ASM 4 : Found opcode in column 1. (nop)
+Warning[203] C:\USERS\PERUMAL_PICHAAA!!!!!\DESKTOP\PICASSMBLY\NOP\NOP.ASM 5 : Found opcode in column 1. (MOVWF)
+Warning[205] C:\USERS\PERUMAL_PICHAAA!!!!!\DESKTOP\PICASSMBLY\NOP\NOP.ASM 6 : Found directive in column 1. (END)

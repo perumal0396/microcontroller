@@ -1,0 +1,5 @@
+_uart_tx: CODE, 1934 0 12
+_main: CODE, 1983 0 65
+_uart_init: CODE, 1964 0 19
+_dealy: CODE, 1946 0 18
+Total: 114

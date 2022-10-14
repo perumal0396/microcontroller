@@ -1,0 +1,163 @@
+              UART AND INTERFACE WITH PIR SENSOR IN PIC 16F877A MICROCONTROLLER
+	
+	/************************************************************/
+	/*                                                          */
+ 	/*  NAME	:    PERUMAL R                              */  	
+	/*                                                          */
+	/*  Description  :  Uart and interface with pir sensor      */
+	/*                                                          */
+	/*  Date         :   
+                                        */							    
+	/*                                                          */
+	/************************************************************/
+Description 
+------------
+	Here Iam Using PIC16F877A Microcontroller :
+	
+	First I am Communicate with Uart Protocols : Uart full form of Universal asynchronous Reciver/Transmiter
+	Becase you need a Transmiter / Reciver  But not a communication protocols like SPI,I2c...etc Than Uart is a serial communication 
+	protocols
+		
+	we here you using a Asynchronous - Tere is no clock signal and synchronous - This for clock signal
+			
+	Asynchronous(full duplex )
+	synchronous(master-half duplex)
+	synchronous(slave-half duplex)
+
+	UART->configureation mode 
+	--------------------------
+	Register used for serial communication 
+
+	->TXSTA(Transmit status and control register)
+	->RCSTA(Recive status and control register)
+	->SPBRG(UART Baud Rate Generator)
+	->TXREG(Uart Transmit Register)
+	->RCREG(Uart Reciver Register)
+	  
+	SPBRG=Baud rate Generators
+		fosc=20MHZ
+		9600=20x10^6/(64(x+1))
+		      20x10^6
+	       (x+1)=  --------  = 32.5
+		      (64x9600)
+	->TXSTA(Transmit status and control register)
+	
+	TX9:bit Transmit Enable bit
+	1=select 9bit transmission
+	0=select 8bit transmission
+
+	TXEN:Transmit Enable bit
+	1=Transmit Enable
+	0=Transmit disable
+
+	SYNC:UART mode Select bit
+	1=Synchronous mode
+	0=asynchronous mode
+
+	BRGH:HiGH baud rate select bit
+	Asynchronous mode
+	1=High speed 
+	0=low  speed
+
+	SPEN:serial port enable bit
+	1=select port enable (configure RC7/RX and RC6/TX/Ck pin)
+	0=select port disable
+
+	SPBRG->Baud rate generator
+	
+	TXIF=0;->Transmit flag bit
+	RXIF=0;->Reciver flag  bit
+	
+	RCREG ->Uart Reciver Register
+
+
+	TIMER1->moudels |
+        ----------------- 
+		 
+		why need Timer means you need a dealy function so you have a seconds and milsecond calculation
+		it have there timer but i am using timer1 calculation here
+		types:
+			->Timer0 (8 bit timer)
+			->Timer1 (16 bit timer)
+			->Timer2 (8 bit timer) 
+
+
+        	TMR1->calculation
+		-------------------
+		
+			    4
+		      T = ------ * prescaler *(65536 -Timer1)
+                            f 
+
+		               4   
+		     1/10  = ------- *8*(65535-Timer1)
+			     20x10^6       
+
+	
+	TIMER1- configuration mode
+	
+	T1CON-Timer1 control register(address 10h)
+	------------------------------------------	
+	
+	T1CKPS1 : T1CKPS0  -->Timer prescaler select bit
+	1 1 = 1 : 8 prescaler values
+	
+	T1OSCEN  : Timer1 oscillator Enable bits
+	1  = oscillator Enable 
+	0  = oscillator shut-off
+
+	TMR1CS  :  Timer1 clock source bit
+	1  = External clock
+	0  = internal clock(Fosc /4 )
+	
+	TMR1ON : Timer1 on bit
+	1  = Enable timer1
+	0  = stop timer1
+	
+	TMR1H->high | readable and writeable TMR1 register 
+	TMR1L->Low  |  
+
+ 	TMR1IF=0; timer flag bit  
+          
+
+	Lcd->(	Liquid crystal Display)
+       ---------------------------------- 
+
+	Rs  -> Register / selected 
+
+	Rw  -> Readable /  writeable 
+	
+ 	EN  -> Enable bit 	
+
+	vss  -> Ground pin
+	
+	VDD  -> power supply
+
+	Lcd_init()---->lcd initialization 
+	
+	void lcd_cmd (unsigned char cmd)---->lcd transmiter
+	
+	void lcd_data(unsigned char data)---->lcd reciver
+
+	
+	PIR--> passive infra red 
+	-------------------------
+
+	PIR->sensor is a passive infra red it have a two slot in  pyroelectrical device detects motion by measuring the object 
+	 if PIR sensor allow to sense motion human has moved in or out of the sensor range
+
+	example: home moade and door lock than human detected
+	
+	PIR-->heat radiation of wave length active element of PIR sensor
+
+	IR-->infra red
+     
+	  -> Drain
+	  -> source
+	  -> Ground	
+	
+	PIR it have three pin 
+	
+	->vss   ->Ground pin
+	->triger->output pin
+	->VDD  -> power supply	

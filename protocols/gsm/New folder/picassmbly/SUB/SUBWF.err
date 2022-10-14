@@ -1,0 +1,14 @@
+Warning[205] NEW FOLDER (2)\SUBWF.ASM 2 : Found directive in column 1. (ORG)
+Warning[203] NEW FOLDER (2)\SUBWF.ASM 3 : Found opcode in column 1. (BCF)
+Warning[203] NEW FOLDER (2)\SUBWF.ASM 4 : Found opcode in column 1. (BSF)
+Warning[203] NEW FOLDER (2)\SUBWF.ASM 5 : Found opcode in column 1. (MOVLW)
+Warning[209] NEW FOLDER (2)\SUBWF.ASM 5 : Missing quote
+Warning[203] NEW FOLDER (2)\SUBWF.ASM 6 : Found opcode in column 1. (MOVWF)
+Message[302] NEW FOLDER (2)\SUBWF.ASM 6 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Warning[203] NEW FOLDER (2)\SUBWF.ASM 7 : Found opcode in column 1. (MOVLW)
+Warning[209] NEW FOLDER (2)\SUBWF.ASM 7 : Missing quote
+Warning[203] NEW FOLDER (2)\SUBWF.ASM 8 : Found opcode in column 1. (SUBWF)
+Message[305] NEW FOLDER (2)\SUBWF.ASM 8 : Using default destination of 1 (file).
+Message[302] NEW FOLDER (2)\SUBWF.ASM 8 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Warning[203] NEW FOLDER (2)\SUBWF.ASM 9 : Found opcode in column 1. (NOP)
+Warning[205] NEW FOLDER (2)\SUBWF.ASM 10 : Found directive in column 1. (END)
